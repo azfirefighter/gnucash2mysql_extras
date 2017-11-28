@@ -69,6 +69,7 @@ my $left_dt = $start_dt_parsed;
 my $right_dt = DateCalc($start_dt_parsed, $opt{'increment'});
 my $interval_hr;
 
+my $grand_total;
 while ($right_dt <= $end_dt_parsed) {
   $left_dt = DateCalc($left_dt, $opt{'increment'});
   $right_dt = DateCalc($right_dt, $opt{'increment'});
@@ -83,9 +84,9 @@ while ($right_dt <= $end_dt_parsed) {
     $total += $val;
   }
   print "Total is $total\n";
-  
+  $grand_total += $total;
 }  
-
+print "\nGrand Total for range: $grand_total\n\n";
 
 
 
